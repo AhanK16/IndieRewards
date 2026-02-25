@@ -1,0 +1,85 @@
+/* Using the Branding Palette */
+:root {
+    --sage-green: #88A08D;
+    --terracotta: #C76D4D;
+    --cream: #F9F4EB;
+    --charcoal: #2D2926;
+}
+
+body {
+    background-color: #ffffff; /* Simplistic white focus */
+    font-family: 'Segoe UI', sans-serif;
+    color: var(--charcoal);
+    margin: 0;
+    display: flex;
+    justify-content: center;
+}
+
+.app-container {
+    width: 100%;
+    max-width: 400px;
+    background-color: var(--cream);
+    min-height: 100vh;
+    padding: 20px;
+    box-sizing: border-box;
+    text-align: center;
+}
+
+header h1 { color: var(--terracotta); margin: 10px 0 5px; }
+.tagline { color: var(--sage-green); font-weight: bold; margin-bottom: 30px; }
+
+#app-logo { width: 120px; border-radius: 20px; }
+
+.reward-card {
+    background: white;
+    padding: 20px;
+    border-radius: 20px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+}
+
+.stamps-grid {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 10px;
+    margin: 20px 0;
+}
+
+.stamp {
+    width: 50px;
+    height: 50px;
+    border: 2px dashed var(--sage-green);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 20px;
+}
+
+.stamp.active {
+    background-color: var(--terracotta);
+    border-style: solid;
+    color: white;
+}
+
+.primary-btn {
+    background-color: var(--terracotta);
+    color: white;
+    border: none;
+    padding: 15px 30px;
+    border-radius: 30px;
+    font-weight: bold;
+    cursor: pointer;
+    width: 100%;
+}
+
+.bottom-nav {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    max-width: 400px;
+    background: white;
+    display: flex;
+    justify-content: space-around;
+    padding: 15px 0;
+    border-top: 1px solid #eee;
+}
