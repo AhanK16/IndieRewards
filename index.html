@@ -8,15 +8,13 @@
 </head>
 <body>
     <div class="app-container">
-        <header>
-            <h1 id="view-title">IndieRewards</h1>
-        </header>
-
-        <main id="home-view" class="view">
-            <div class="logo-placeholder">
+        
+        <main id="home-page" class="view">
+            <header>
                 <img src="logo.png" alt="IndieRewards Logo" id="app-logo">
-            </div>
-            <p class="tagline">Local Love, Pooled Perks.</p>
+                <h1>IndieRewards</h1>
+                <p class="tagline">Local Love, Pooled Perks.</p>
+            </header>
             <section class="reward-card">
                 <h3>Your Digital Stamp Card</h3>
                 <div class="stamps-grid" id="stampsGrid"></div>
@@ -24,26 +22,31 @@
             </section>
         </main>
 
-        <main id="map-view" class="view hidden">
-            <div class="map-placeholder">
-                <div class="map-controls">
-                    <button onclick="toggleSubView('map')">Map</button>
-                    <button onclick="toggleSubView('list')">List</button>
+        <main id="explore-page" class="view hidden">
+            <header class="explore-header">
+                <h2>Find Local Gems</h2>
+                <div class="view-toggle">
+                    <button id="list-toggle" class="toggle-btn active" onclick="setExploreView('list')">List View</button>
+                    <button id="map-toggle" class="toggle-btn" onclick="setExploreView('map')">Map View</button>
                 </div>
-                <div id="visual-map" class="sub-view">
-                    <div class="map-pin pin-1"><img src="logo.png" width="30"></div>
-                    <div class="map-pin pin-2"><img src="logo.png" width="30"></div>
-                    <div class="map-pin pin-3"><img src="logo.png" width="30"></div>
+            </header>
+
+            <section id="list-container" class="sub-view">
+                <div id="location-list"></div>
+            </section>
+
+            <section id="map-container" class="sub-view hidden">
+                <div class="mock-map">
+                    <div class="map-pin pin-1"><img src="logo.png"></div>
+                    <div class="map-pin pin-2"><img src="logo.png"></div>
+                    <div class="map-pin pin-3"><img src="logo.png"></div>
                 </div>
-                <div id="visual-list" class="sub-view hidden">
-                    <div id="location-list"></div>
-                </div>
-            </div>
+            </section>
         </main>
 
         <nav class="bottom-nav">
-            <button class="nav-item active" onclick="switchView('home')">Home</button>
-            <button class="nav-item" onclick="switchView('map')">Explore</button>
+            <button class="nav-item active" id="nav-home" onclick="navigateTo('home')">Home</button>
+            <button class="nav-item" id="nav-explore" onclick="navigateTo('explore')">Explore</button>
         </nav>
     </div>
     <script src="script.js"></script>
