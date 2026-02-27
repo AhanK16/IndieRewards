@@ -9,27 +9,41 @@
 <body>
     <div class="app-container">
         <header>
-            <div class="logo-placeholder">
-                <img src="Indierewards1.png" alt="IndieRewards Logo" id="app-logo">
-            </div>
-            <h1>IndieRewards</h1>
-            <p class="tagline">Local Love, Pooled Perks.</p>
+            <h1 id="view-title">IndieRewards</h1>
         </header>
 
-        <main>
+        <main id="home-view" class="view">
+            <div class="logo-placeholder">
+                <img src="logo.png" alt="IndieRewards Logo" id="app-logo">
+            </div>
+            <p class="tagline">Local Love, Pooled Perks.</p>
             <section class="reward-card">
                 <h3>Your Digital Stamp Card</h3>
-                <p>Buy 10 drinks, get 1 free at a random local gem!</p>
-                <div class="stamps-grid" id="stampsGrid">
-                    </div>
+                <div class="stamps-grid" id="stampsGrid"></div>
                 <button id="scanBtn" class="primary-btn">Scan QR Code</button>
             </section>
         </main>
 
+        <main id="map-view" class="view hidden">
+            <div class="map-placeholder">
+                <div class="map-controls">
+                    <button onclick="toggleSubView('map')">Map</button>
+                    <button onclick="toggleSubView('list')">List</button>
+                </div>
+                <div id="visual-map" class="sub-view">
+                    <div class="map-pin pin-1"><img src="logo.png" width="30"></div>
+                    <div class="map-pin pin-2"><img src="logo.png" width="30"></div>
+                    <div class="map-pin pin-3"><img src="logo.png" width="30"></div>
+                </div>
+                <div id="visual-list" class="sub-view hidden">
+                    <div id="location-list"></div>
+                </div>
+            </div>
+        </main>
+
         <nav class="bottom-nav">
-            <button class="nav-item active">Home</button>
-            <button class="nav-item">Map</button>
-            <button class="nav-item">Account</button>
+            <button class="nav-item active" onclick="switchView('home')">Home</button>
+            <button class="nav-item" onclick="switchView('map')">Explore</button>
         </nav>
     </div>
     <script src="script.js"></script>
